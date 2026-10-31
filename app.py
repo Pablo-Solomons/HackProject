@@ -174,9 +174,44 @@ st.markdown(
 st.divider()
 
 
-# ──────────────────────────────────────────────
-# Formulaire
-# ──────────────────────────────────────────────
+st.subheader("⚡ Profils rapides")
+col_p1, col_p2, col_p3 = st.columns(3)
+with col_p1:
+    if st.button("🚀 Débutant pressé", use_container_width=True,
+                 help="5h/sem, budget zéro, connexion faible"):
+        st.session_state["prefill"] = {
+            "objectif_idx": 7,   # "Bases de l'informatique"
+            "niveau_idx": 0,     # "Débutant absolu"
+            "temps": 5,
+            "contraintes": ["Connexion internet faible ou instable",
+                            "Budget zéro (tout doit être gratuit)"],
+            "langue_idx": 0,     # Français
+        }
+        st.rerun()
+with col_p2:
+    if st.button("🎓 Étudiant sérieux", use_container_width=True,
+                 help="15h/sem, intermédiaire"):
+        st.session_state["prefill"] = {
+            "objectif_idx": 0,
+            "niveau_idx": 2,
+            "temps": 15,
+            "contraintes": ["Budget zéro (tout doit être gratuit)"],
+            "langue_idx": 2,
+        }
+        st.rerun()
+with col_p3:
+    if st.button("🔄 Reconversion pro", use_container_width=True,
+                 help="20h/sem, quelques bases"):
+        st.session_state["prefill"] = {
+            "objectif_idx": 2,
+            "niveau_idx": 1,
+            "temps": 20,
+            "contraintes": [],
+            "langue_idx": 2,
+        }
+        st.rerun()
+st.divider()
+
 with st.form(key="profil_form"):
     st.subheader("📋 Décrivez votre profil")
 
@@ -376,6 +411,7 @@ def afficher_roadmap(roadmap: dict) -> None:
 
     etapes = roadmap.get("etapes", [])
     nb_etapes = len(etapes)
+# Timeline visuelle en haut
 
     # Barre de progression globale
     if "progression" not in st.session_state:
