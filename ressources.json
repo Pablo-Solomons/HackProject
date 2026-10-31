@@ -199,7 +199,7 @@
       "tags": ["mobile", "react-native", "javascript"]
     },
     "flutter_fr": {
-      "titre": "Flutter – Premiers pas (FR)",
+      "titre": "Flutter – Premiers pas (codelab officiel)",
       "url": "https://docs.flutter.dev/get-started/codelab",
       "langue": "en",
       "gratuit": true,
@@ -233,6 +233,168 @@
       "hors_ligne": false,
       "niveau": "intermediaire",
       "tags": ["python", "avance", "backend", "api"]
+    },
+    "freecodecamp_en": {
+      "titre": "freeCodeCamp – Curriculum complet gratuit",
+      "url": "https://www.freecodecamp.org/learn",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["html", "css", "javascript", "python", "backend", "data", "algorithmique"]
+    },
+    "exercism_en": {
+      "titre": "Exercism – Pratique guidée par langage",
+      "url": "https://exercism.org/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["python", "javascript", "algorithmique", "pratique"]
+    },
+    "kaggle_en": {
+      "titre": "Kaggle Learn – Data Science & ML gratuits",
+      "url": "https://www.kaggle.com/learn",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["data", "machine-learning", "python", "pandas", "sql"]
+    },
+    "odin_project_en": {
+      "titre": "The Odin Project – Web Development complet",
+      "url": "https://www.theodinproject.com/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["html", "css", "javascript", "nodejs", "react", "frontend", "backend"]
+    },
+    "typescript_en": {
+      "titre": "TypeScript – Documentation officielle",
+      "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["typescript", "javascript", "frontend", "backend"]
+    },
+    "typescript_fr": {
+      "titre": "TypeScript – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/8107076-decouvrez-typescript",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["typescript", "javascript", "frontend"]
+    },
+    "vue_fr": {
+      "titre": "Vue.js – Documentation officielle (FR)",
+      "url": "https://fr.vuejs.org/guide/introduction",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["vue", "javascript", "frontend", "web"]
+    },
+    "devops_fr": {
+      "titre": "DevOps – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/6093671-decouvrez-la-methodologie-devops",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["devops", "ci-cd", "cloud", "methodologie"]
+    },
+    "cloud_aws_fr": {
+      "titre": "AWS Cloud Practitioner – Formation officielle gratuite",
+      "url": "https://aws.amazon.com/fr/training/digital/aws-cloud-practitioner-essentials/",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["cloud", "aws", "devops"]
+    },
+    "postgresql_en": {
+      "titre": "PostgreSQL – Documentation officielle",
+      "url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["sql", "postgresql", "bases-de-donnees", "backend"]
+    },
+    "algo_avance_en": {
+      "titre": "Algorithms – Princeton (Coursera, audit gratuit)",
+      "url": "https://www.coursera.org/learn/algorithms-part1",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "avance",
+      "tags": ["algorithmique", "structures-de-donnees", "java", "avance"]
+    },
+    "securite_web_fr": {
+      "titre": "Sécurité web – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/1780181-securisez-vos-applications-web-avec-lowasp",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["securite", "web", "owasp", "backend"]
+    },
+    "regex_fr": {
+      "titre": "Expressions régulières – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/4399411-utilisez-des-expressions-regulieres-en-python",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["python", "regex", "traitement-texte"]
+    },
+    "terminal_fr": {
+      "titre": "Terminal Linux – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/6173491-apprenez-a-utiliser-la-ligne-de-commande-dans-un-terminal",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["linux", "terminal", "devops", "bases"]
+    },
+    "github_actions_en": {
+      "titre": "GitHub Actions – Documentation officielle",
+      "url": "https://docs.github.com/en/actions/learn-github-actions",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["devops", "ci-cd", "github", "automatisation"]
+    },
+    "numpy_pandas_fr": {
+      "titre": "NumPy & Pandas – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/4452741-decouvrez-les-librairies-python-pour-la-data-science",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["python", "data", "numpy", "pandas", "data-science"]
+    },
+    "deep_learning_fr": {
+      "titre": "Deep Learning – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/4470531-classez-et-segmentez-des-donnees-visuelles",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "avance",
+      "tags": ["deep-learning", "machine-learning", "ia", "python"]
+    },
+    "render_deploy_en": {
+      "titre": "Render – Déploiement gratuit d'apps web",
+      "url": "https://docs.render.com/deploy-fastapi",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["deploiement", "cloud", "devops", "backend"]
     }
   }
 }

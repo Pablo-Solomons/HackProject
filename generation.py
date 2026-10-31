@@ -3,7 +3,7 @@ generation.py – Logique d'appel au LLM via Groq API (Personne A)
 
 Ce module gère :
 - Le chargement de la base de ressources vérifiées
-- L'appel à l'API Groq (Llama 3.3 70B)
+- L'appel à l'API Groq (openai/gpt-oss-120b)
 - La validation et la correction automatique du JSON
 - L'enrichissement de la roadmap avec les vraies URLs
 """
@@ -22,7 +22,7 @@ from prompts import SYSTEM_PROMPT, construire_prompt_utilisateur, construire_pro
 # ──────────────────────────────────────────────
 RESSOURCES_FILE = "ressources.json"
 MAX_RETRIES = 2          # Nombre de tentatives en cas de JSON invalide
-MODEL = "llama-3.3-70b-versatile"
+MODEL = "openai/gpt-oss-120b"
 
 
 # ──────────────────────────────────────────────
