@@ -5,6 +5,7 @@ Ce module fournit la fonction exporter_markdown() et, en bonus,
 une conversion PDF via la librairie fpdf2 (optionnelle).
 """
 
+import os
 from datetime import datetime
 from typing import Optional
 
@@ -41,11 +42,23 @@ def exporter_markdown(roadmap: dict) -> str:
         lignes.append(f"> 💬 {message}")
         lignes.append("")
 
-    # ── Étapes ──
+    etapes = roadmap.get("etapes", [])
+
+    # Tableau de synthèse
+    lignes.append("## 📊 Vue d'ensemble")
+    lignes.append("")
+    lignes.append("| # | Étape | Durée | Mini-projet |")
+    lignes.append("|---|---|---|---|")
+    for i, etape in enumerate(etapes, start=1):
+        titre_court = etape.get("titre", "")
+        duree_e = etape.get("duree_semaines", "?")
+        projet = etape.get("mini_projet", "")[:60]
+        lignes.append(f"| {i} | {titre_court} | {duree_e} sem | {projet} |")
+    lignes.append("")
     lignes.append("---")
     lignes.append("")
 
-    etapes = roadmap.get("etapes", [])
+    # ── Étapes ──
     for i, etape in enumerate(etapes, start=1):
         titre = etape.get("titre", f"Étape {i}")
         duree_etape = etape.get("duree_semaines", "?")
@@ -121,12 +134,19 @@ def exporter_pdf(roadmap: dict) -> Optional[bytes]:
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
 
-    # Police par défaut (Helvetica = intégré, gère l'UTF-8 basique)
-    pdf.set_font("Helvetica", "B", 18)
+    font_path = os.path.join(os.path.dirname(__file__), "fonts", "DejaVuSans.ttf")
+    font_bold_path = os.path.join(os.path.dirname(__file__), "fonts", "DejaVuSans-Bold.ttf")
+    font_family = "Helvetica"
+    if os.path.exists(font_path) and os.path.exists(font_bold_path):
+        pdf.add_font("DejaVu", "", font_path)
+        pdf.add_font("DejaVu", "B", font_bold_path)
+        font_family = "DejaVu"
+
+    pdf.set_font(font_family, "B", 18)
     titre = f"Roadmap - {roadmap.get('objectif', 'Mon objectif')}"
     pdf.cell(0, 12, txt=titre, new_x="LMARGIN", new_y="NEXT")
 
-    pdf.set_font("Helvetica", "", 11)
+    pdf.set_font(font_family, "", 11)
     duree = roadmap.get("duree_totale_semaines", "?")
     pdf.cell(0, 8, txt=f"Duree totale : {duree} semaines", new_x="LMARGIN", new_y="NEXT")
     pdf.ln(4)
@@ -134,16 +154,16 @@ def exporter_pdf(roadmap: dict) -> Optional[bytes]:
     # Message personnalisé
     message = roadmap.get("message_personnalise", "")
     if message:
-        pdf.set_font("Helvetica", "I", 10)
+        pdf.set_font(font_family, "", 10)
         pdf.multi_cell(0, 6, txt=message)
         pdf.ln(4)
 
     # Étapes
     for i, etape in enumerate(roadmap.get("etapes", []), start=1):
-        pdf.set_font("Helvetica", "B", 13)
+        pdf.set_font(font_family, "B", 13)
         pdf.cell(0, 10, txt=f"Etape {i} - {etape.get('titre', '')}", new_x="LMARGIN", new_y="NEXT")
 
-        pdf.set_font("Helvetica", "", 10)
+        pdf.set_font(font_family, "", 10)
         pdf.cell(0, 6, txt=f"Duree : {etape.get('duree_semaines', '?')} semaine(s)", new_x="LMARGIN", new_y="NEXT")
 
         # Compétences
@@ -158,7 +178,7 @@ def exporter_pdf(roadmap: dict) -> Optional[bytes]:
         # Mini-projet
         mini_projet = etape.get("mini_projet", "")
         if mini_projet:
-            pdf.set_font("Helvetica", "I", 10)
+            pdf.set_font(font_family, "", 10)
             pdf.multi_cell(0, 6, txt=f"Mini-projet : {mini_projet}")
 
         pdf.ln(4)

@@ -37,7 +37,7 @@ La roadmap saute ce que l'utilisateur sait déjà, s'adapte à son temps disponi
 | --- | --- | --- |
 | Langage | Python 3.10+ | Simple et rapide à écrire |
 | Interface | Streamlit | Formulaire et affichage sans HTML/CSS |
-| IA | Groq API (Llama 3.3 70B) | Rapide, offre gratuite |
+| IA | Groq API (GPT-OSS 120B) | Rapide, offre gratuite |
 | Format de sortie | JSON structuré | Permet de dessiner la roadmap proprement |
 | Base de ressources | Fichier `ressources.json` (environ 20 à 30 entrées) | Liens vérifiés, aucune URL inventée |
 | Visuel | Cartes par étape, ou diagramme Mermaid en bonus | Rendu type roadmap |

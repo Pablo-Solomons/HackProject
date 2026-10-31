@@ -9,7 +9,7 @@ Une application web qui génère des **roadmaps tech personnalisées** : ordonn�
 ## ✨ Fonctionnalités du MVP
 
 - 📋 **Formulaire de profil** : objectif, niveau, temps disponible, contraintes, langue
-- 🤖 **Génération par IA** : Groq API (Llama 3.3 70B) → JSON structuré
+- 🤖 **Génération par IA** : Groq API (GPT-OSS 120B) → JSON structuré
 - 🗂️ **Base de ressources vérifiées** : ~25 liens gratuits dans `ressources.json` (aucun lien inventé)
 - 🃏 **Affichage par cartes** : une carte par étape avec compétences, ressources et mini-projet
 - ✅ **Suivi de progression** : cases à cocher par étape

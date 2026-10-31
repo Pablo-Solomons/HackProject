@@ -378,10 +378,12 @@ def afficher_roadmap(roadmap: dict) -> None:
     nb_etapes = len(etapes)
 
     # Barre de progression globale
-    if "progression" not in st.session_state:
-        st.session_state.progression = [False] * nb_etapes
+    progression = st.session_state.get("progression")
+    if not isinstance(progression, list) or len(progression) != nb_etapes:
+        progression = [False] * nb_etapes
+        st.session_state.progression = progression
 
-    nb_validees = sum(st.session_state.progression)
+    nb_validees = sum(progression)
     pct = int(nb_validees / nb_etapes * 100) if nb_etapes else 0
     st.progress(pct / 100, text=f"Progression : {nb_validees}/{nb_etapes} étapes complétées ({pct}%)")
     st.markdown("")
@@ -430,10 +432,10 @@ def afficher_roadmap(roadmap: dict) -> None:
         # Case à cocher de progression
         checked = st.checkbox(
             f"✅ Marquer « {titre} » comme terminée",
-            value=st.session_state.progression[i] if i < len(st.session_state.progression) else False,
+            value=progression[i],
             key=f"etape_{i}",
         )
-        st.session_state.progression[i] = checked
+        progression[i] = checked
 
     # ── Boutons d'export ──
     st.divider()
@@ -474,7 +476,10 @@ def afficher_roadmap(roadmap: dict) -> None:
 # Logique principale
 # ──────────────────────────────────────────────
 if submitted:
-    # Réinitialiser la progression
+    # Réinitialiser la progression et les cases de la roadmap précédente
+    for key in list(st.session_state):
+        if key.startswith("etape_"):
+            del st.session_state[key]
     st.session_state.progression = []
 
     profil = {

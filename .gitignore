@@ -36,3 +36,6 @@ Thumbs.db
 # Logs et données temporaires
 *.log
 *.tmp
+
+# Polices Unicode (à fournir localement)
+fonts/
