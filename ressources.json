@@ -1,0 +1,238 @@
+{
+  "ressources": {
+    "py_basics_fr": {
+      "titre": "Python pour débutants – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["python", "bases", "programmation"]
+    },
+    "py_basics_en": {
+      "titre": "Python.org Official Tutorial",
+      "url": "https://docs.python.org/3/tutorial/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["python", "bases", "documentation"]
+    },
+    "py_poo_fr": {
+      "titre": "POO en Python – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["python", "poo", "classes"]
+    },
+    "git_fr": {
+      "titre": "Git et GitHub – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["git", "github", "versionnage"]
+    },
+    "git_en": {
+      "titre": "Git – The official documentation",
+      "url": "https://git-scm.com/doc",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["git", "versionnage"]
+    },
+    "html_css_fr": {
+      "titre": "HTML et CSS – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/1603881-creez-votre-site-web-avec-html5-et-css3",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["html", "css", "web", "frontend"]
+    },
+    "js_fr": {
+      "titre": "JavaScript – MDN Web Docs (FR)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/JavaScript",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["javascript", "web", "frontend"]
+    },
+    "js_en": {
+      "titre": "The Odin Project – JavaScript Path",
+      "url": "https://www.theodinproject.com/paths/full-stack-javascript",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["javascript", "react", "nodejs", "frontend", "backend"]
+    },
+    "react_fr": {
+      "titre": "React – Documentation officielle (FR)",
+      "url": "https://fr.react.dev/learn",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["react", "frontend", "javascript"]
+    },
+    "node_en": {
+      "titre": "Node.js – Documentation officielle",
+      "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["nodejs", "backend", "javascript"]
+    },
+    "django_fr": {
+      "titre": "Django – Tuto OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["django", "python", "backend", "web"]
+    },
+    "fastapi_en": {
+      "titre": "FastAPI – Documentation officielle",
+      "url": "https://fastapi.tiangolo.com/tutorial/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["fastapi", "api", "python", "backend"]
+    },
+    "sql_fr": {
+      "titre": "SQL – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/6971126-implementez-vos-bases-de-donnees-relationnelles-avec-sql",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["sql", "bases-de-donnees", "backend", "data"]
+    },
+    "sql_en": {
+      "titre": "SQLZoo – Interactive SQL",
+      "url": "https://sqlzoo.net/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["sql", "bases-de-donnees", "data"]
+    },
+    "linux_fr": {
+      "titre": "Linux – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/7170491-initiez-vous-a-linux",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["linux", "devops", "terminal"]
+    },
+    "docker_fr": {
+      "titre": "Docker – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["docker", "devops", "conteneur"]
+    },
+    "docker_en": {
+      "titre": "Docker – Documentation officielle Get Started",
+      "url": "https://docs.docker.com/get-started/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["docker", "devops", "conteneur"]
+    },
+    "data_science_fr": {
+      "titre": "Python pour la Data Science – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/6204541-initiez-vous-a-python-pour-lanalyse-de-donnees",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["python", "data", "pandas", "analyse"]
+    },
+    "ml_fr": {
+      "titre": "Machine Learning – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/8063076-initiez-vous-au-machine-learning",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["machine-learning", "data", "ia"]
+    },
+    "ml_en": {
+      "titre": "Machine Learning Crash Course – Google",
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["machine-learning", "ia", "tensorflow"]
+    },
+    "algo_fr": {
+      "titre": "Algorithmique – Khan Academy (FR)",
+      "url": "https://fr.khanacademy.org/computing/computer-science/algorithms",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["algorithmique", "structures-de-donnees", "bases"]
+    },
+    "mobile_react_native_en": {
+      "titre": "React Native – Documentation officielle",
+      "url": "https://reactnative.dev/docs/getting-started",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["mobile", "react-native", "javascript"]
+    },
+    "flutter_fr": {
+      "titre": "Flutter – Premiers pas (FR)",
+      "url": "https://docs.flutter.dev/get-started/codelab",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["flutter", "mobile", "dart"]
+    },
+    "api_rest_fr": {
+      "titre": "Construire une API REST – OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses/6573181-adoptez-les-api-rest-pour-vos-projets-web",
+      "langue": "fr",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["api", "rest", "backend", "web"]
+    },
+    "cs50_en": {
+      "titre": "CS50 – Introduction to Computer Science (Harvard)",
+      "url": "https://cs50.harvard.edu/x/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "debutant",
+      "tags": ["algorithmique", "c", "python", "bases", "web"]
+    },
+    "typing_python_en": {
+      "titre": "Real Python – Articles & Tutoriels",
+      "url": "https://realpython.com/",
+      "langue": "en",
+      "gratuit": true,
+      "hors_ligne": false,
+      "niveau": "intermediaire",
+      "tags": ["python", "avance", "backend", "api"]
+    }
+  }
+}
