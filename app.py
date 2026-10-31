@@ -20,7 +20,7 @@ from exporter import exporter_markdown, exporter_pdf
 load_dotenv()  # Charge .env en local (GROQ_API_KEY)
 
 st.set_page_config(
-    page_title="RoadmapIA – Votre parcours tech personnalisé",
+    page_title="DevMentor – Votre parcours tech personnalisé",
     page_icon="🗺️",
     layout="centered",
     initial_sidebar_state="collapsed",
@@ -166,7 +166,7 @@ st.markdown("""
 # ──────────────────────────────────────────────
 # En-tête héro
 # ──────────────────────────────────────────────
-st.markdown('<p class="hero-title">🗺️ RoadmapIA</p>', unsafe_allow_html=True)
+st.markdown('<p class="hero-title">🗺️ DevMentor</p>', unsafe_allow_html=True)
 st.markdown(
     '<p class="hero-subtitle">Votre parcours tech 100 % personnalisé · Ressources gratuites · IA pour tous 🌍</p>',
     unsafe_allow_html=True,
@@ -521,7 +521,7 @@ if "roadmap" in st.session_state:
 st.divider()
 st.markdown(
     '<div style="text-align:center;color:#6b7280;font-size:0.82rem;">'
-    "RoadmapIA — Hackathon IA pour tous 🌍 · Ressources 100% gratuites et vérifiées"
+    "DevMentor — Hackathon IA pour tous 🌍 · Ressources 100% gratuites et vérifiées"
     "</div>",
     unsafe_allow_html=True,
 )
