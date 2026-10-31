@@ -3,6 +3,10 @@
 # ──────────────────────────────────────────────
 .env
 
+# Fichiers de test générés automatiquement (test_generation.py)
+test_roadmap_profil_*.json
+
+
 # Python
 __pycache__/
 *.py[cod]

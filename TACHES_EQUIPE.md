@@ -15,7 +15,8 @@
 | `generation.py` | ✅ Complet | Appel API Groq + validation JSON + auto-retry (2 tentatives) |
 | `prompts.py` | ✅ Complet | Prompt système (10 règles strictes) + builder de prompt + correction |
 | `exporter.py` | ✅ Complet | Export Markdown complet + export PDF (bonus via fpdf2) |
-| `ressources.json` | ✅ Base (26) | 26 ressources gratuites vérifiées FR + EN |
+| `ressources.json` | ✅ Enrichi (44) | 44 ressources gratuites vérifiées FR + EN, 60 tags couverts |
+| `test_generation.py` | ✅ Créé | Script de test 3 profils avec validations automatiques |
 | `requirements.txt` | ✅ Complet | streamlit, groq, python-dotenv, fpdf2 |
 | `.gitignore` | ✅ Complet | Exclut .env, venv, __pycache__, secrets Streamlit |
 | `.env.example` | ✅ Complet | Template de la clé API Groq |
@@ -37,7 +38,7 @@ streamlit run app.py   # → http://localhost:8501
 ## 👤 Personne A — IA & Données
 ### Fichiers : `generation.py` · `prompts.py` · `ressources.json`
 
-### Étape 0 — Setup (5 min)
+### Étape 0 — Setup
 ```bash
 git checkout -b personne-A
 cp .env.example .env
@@ -46,96 +47,61 @@ cp .env.example .env
 pip install -r requirements.txt
 ```
 
+**Statut :**
+- [x] Branche `personne-A` créée ✅
+- [ ] Fichier `.env` à créer avec la vraie clé API Groq
+- [ ] `pip install -r requirements.txt` à relancer (timeout réseau lors du 1er essai)
+
 ### Tâche A1 — Tester le LLM en live (20 min)
-Créer un fichier `test_generation.py` à la racine :
-```python
-from generation import generer_roadmap
-import json
 
-# Test profil 1 : débutant, peu de temps
-profil1 = {
-    "objectif": "Développeur backend (Python/Django/FastAPI)",
-    "niveau": "Débutant absolu",
-    "competences_acquises": "Aucune",
-    "temps_semaine": "5",
-    "contraintes": "Budget zéro, connexion faible",
-    "langue": "Français"
-}
+**Statut : ⏳ En attente de la clé API**
 
-# Test profil 2 : confirmé, beaucoup de temps
-profil2 = {
-    "objectif": "Développeur fullstack",
-    "niveau": "Intermédiaire",
-    "competences_acquises": "Python basique, HTML/CSS, Git",
-    "temps_semaine": "20",
-    "contraintes": "Aucune",
-    "langue": "Les deux"
-}
+Le fichier `test_generation.py` est **déjà créé** dans le projet avec :
+- 3 profils contrastés (débutant / intermédiaire / reconversion mobile)
+- Validation automatique des IDs de ressources
+- Validation de la cohérence des durées
+- Sauvegarde des JSON générés (`test_roadmap_profil_1.json`, etc.)
 
-for i, profil in enumerate([profil1, profil2], 1):
-    print(f"\n{'='*50}\nPROFIL {i}\n{'='*50}")
-    try:
-        r = generer_roadmap(profil)
-        print(json.dumps(r, indent=2, ensure_ascii=False))
-        print(f"✅ Profil {i} OK — {len(r['etapes'])} étapes, {r['duree_totale_semaines']} semaines")
-    except Exception as e:
-        print(f"❌ Erreur : {e}")
-```
+**À faire dès que tu as la clé API :**
 ```bash
+# 1. Mettre la clé dans .env
+echo "GROQ_API_KEY=ta_clé_ici" > .env
+
+# 2. Lancer les tests
 python3 test_generation.py
 ```
 
 **Critères de succès :**
-- [ ] Le JSON est valide (pas d'erreur de parsing)
-- [ ] Les IDs de ressources dans `etapes[].ressources` existent tous dans `ressources.json`
-- [ ] Les deux profils donnent des roadmaps différentes
-- [ ] La durée totale est cohérente avec le temps disponible
+- [ ] Les 3 profils génèrent un JSON valide sans erreur
+- [ ] Aucun ID de ressource invalide (le script le vérifie automatiquement)
+- [ ] Les 3 roadmaps sont différentes entre elles
+- [ ] La durée totale est cohérente (tolérance ±2 semaines)
 
-### Tâche A2 — Enrichir `ressources.json` (20 min)
-Ajouter au moins 10 ressources supplémentaires pour couvrir les tags manquants.
-Ouvrir `ressources.json` et ajouter dans `"ressources": { ... }` :
+### Tâche A2 — Enrichir `ressources.json` ✅ FAIT
 
-**Tags manquants prioritaires :** `typescript`, `vue`, `devops`, `cloud`, `algorithmique avancé`
+**Statut : ✅ Terminé**
 
-Exemples à ajouter :
-```json
-"freecodecamp_en": {
-  "titre": "freeCodeCamp – Full curriculum",
-  "url": "https://www.freecodecamp.org/learn",
-  "langue": "en",
-  "gratuit": true,
-  "hors_ligne": false,
-  "niveau": "debutant",
-  "tags": ["html", "css", "javascript", "python", "backend", "data"]
-},
-"exercism_en": {
-  "titre": "Exercism – Pratique guidée par langue",
-  "url": "https://exercism.org/",
-  "langue": "en",
-  "gratuit": true,
-  "hors_ligne": false,
-  "niveau": "intermediaire",
-  "tags": ["python", "javascript", "algorithmique", "pratique"]
-},
-"odin_project_en": {
-  "titre": "The Odin Project – Web Development",
-  "url": "https://www.theodinproject.com/",
-  "langue": "en",
-  "gratuit": true,
-  "hors_ligne": false,
-  "niveau": "debutant",
-  "tags": ["html", "css", "javascript", "nodejs", "frontend", "backend"]
-},
-"kaggle_en": {
-  "titre": "Kaggle – Data Science & ML Courses",
-  "url": "https://www.kaggle.com/learn",
-  "langue": "en",
-  "gratuit": true,
-  "hors_ligne": false,
-  "niveau": "intermediaire",
-  "tags": ["data", "machine-learning", "python", "pandas", "sql"]
-}
-```
+`ressources.json` est passé de **26 à 44 ressources**, couvrant désormais **60 tags** :
+
+| Nouvelles ressources ajoutées | Tags couverts |
+|---|---|
+| freeCodeCamp | `html`, `css`, `javascript`, `python`, `data` |
+| Exercism | `algorithmique`, `pratique` |
+| Kaggle Learn | `data`, `machine-learning`, `pandas` |
+| The Odin Project (complet) | `fullstack`, `nodejs`, `react` |
+| TypeScript (FR + EN) | `typescript` |
+| Vue.js (FR) | `vue` |
+| DevOps OpenClassrooms | `devops`, `ci-cd`, `methodologie` |
+| AWS Cloud Practitioner | `cloud`, `aws` |
+| PostgreSQL | `postgresql` |
+| Algorithms Princeton | `algorithmique avancé` |
+| Sécurité web OWASP | `securite` |
+| Expressions régulières | `regex` |
+| Terminal Linux | `terminal` |
+| GitHub Actions | `ci-cd`, `automatisation` |
+| NumPy & Pandas | `numpy`, `data-science` |
+| Deep Learning OC | `deep-learning` |
+| Render Deploy | `deploiement`, `cloud` |
 
 ### Tâche A3 — Ajuster le prompt si nécessaire (10 min)
 Après les tests A1, si le LLM :
@@ -145,12 +111,22 @@ Après les tests A1, si le LLM :
 
 Fichier à modifier : `prompts.py` ligne 22 (`SYSTEM_PROMPT`)
 
-### Tâche A4 — Commit & merge (5 min)
+### Tâche A4 — Commit & merge
+
+**Statut : ⏳ À faire après A1 et A3**
+
 ```bash
-git add generation.py prompts.py ressources.json
-git commit -m "feat(A): enrichir ressources (36+) et affiner prompt"
+# Ajouter les fichiers modifiés (test_generation.py + les JSON de test sont ignorés)
+git add ressources.json test_generation.py
+git commit -m "feat(A): ressources 44 entrées, script de test 3 profils"
+
+# Si le prompt a été ajusté après les tests :
+git add prompts.py
+git commit -m "fix(A): affiner prompt après tests LLM"
+
+# Merger dans main
 git checkout main
-git pull origin main
+git pull origin main --no-rebase
 git merge personne-A
 git push origin main
 ```
